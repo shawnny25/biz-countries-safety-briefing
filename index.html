@@ -54,6 +54,7 @@
   .badge.lv3 { background: #c9622a33; color: #f0a060; }
   .badge.lv4 { background: #b93b3b33; color: #f2938e; }
   .badge.health { background: #4f8bff33; color: #8fb8ff; }
+  .badge.kr { background: #c9364c33; color: #f28fa0; }
   ul.points { margin: 8px 0 0; padding-left: 18px; font-size: 13.5px; line-height: 1.55; color: var(--text-main); }
   ul.points li { margin-bottom: 6px; }
   ul.points li:last-child { margin-bottom: 0; }
@@ -62,6 +63,11 @@
     font-size: 12.5px; line-height: 1.5; color: #bcd6ff; display: flex; gap: 6px;
   }
   .health-note .hicon { flex-shrink: 0; }
+  .kr-note {
+    margin-top: 10px; padding-top: 9px; border-top: 1px dashed var(--card-border);
+    font-size: 12.5px; line-height: 1.5; color: #f2b6c0; display: flex; gap: 6px;
+  }
+  .kr-note .hicon { flex-shrink: 0; }
   .footer {
     max-width: 1200px; margin: 40px auto 0; color: var(--text-sub); font-size: 12px;
     border-top: 1px solid var(--card-border); padding-top: 16px;
@@ -73,12 +79,13 @@
 <div class="header">
   <h1>🛡️ 사업국가 출장 안전 · 정세 브리핑</h1>
   <div class="date">2026년 7월 10일 (금) 기준 · 매일 오전 7시 자동 갱신</div>
-  <div class="sources">기준 매체: Reuters · AP · BBC News, 미 국무부/각국 정부 여행경보, 미 질병통제예방센터(CDC) 여행건강경보 (참고: Naver News)</div>
+  <div class="sources">기준 매체: Reuters · AP · BBC News, 미 국무부/각국 정부 여행경보, 미 질병통제예방센터(CDC) 여행건강경보, 대한민국 외교부 해외안전여행(0404.go.kr) (참고: Naver News)</div>
   <div class="legend">
     <span><span class="dot" style="background:#6fd19a"></span>Lv.1 평시 주의</span>
     <span><span class="dot" style="background:#e0c169"></span>Lv.2 주의 강화</span>
     <span><span class="dot" style="background:#f0a060"></span>Lv.3 여행 재고</span>
     <span><span class="dot" style="background:#f2938e"></span>Lv.4 여행 금지</span>
+    <span><span class="dot" style="background:#f28fa0"></span>🇰🇷 외교부 지정(여행경보 4단계 등)</span>
   </div>
 </div>
 
@@ -160,23 +167,25 @@
   </div>
 
   <div class="card">
-    <div class="card-head"><h2><span class="flag">🇱🇦</span>라오스</h2><div class="badges"><span class="badge lv1">Lv.1</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div></div>
+    <div class="card-head"><h2><span class="flag">🇱🇦</span>라오스</h2><div class="badges"><span class="badge lv1">Lv.1</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span><span class="badge kr">🇰🇷 외교부</span></div></div>
     <ul class="points">
       <li>사이솜분주는 산발적 기반시설 공격·무장충돌로 비필수 여행 자제구역 유지</li>
       <li>태국 접경 보케오주 검문소 군 병력 증강 — 라오군-미상 무장단체 충돌 지속</li>
       <li>캄보디아-태국 국경 분쟁 여파로 참파삭주 남서부 국경 인근도 군사충돌·지뢰 위험</li>
     </ul>
     <div class="health-note"><span class="hicon">🦠</span><span>CDC: 소아마비(폴리오) 바이러스 검출국 목록 포함 — 예방접종 상태 사전 확인 권장</span></div>
+    <div class="kr-note"><span class="hicon">🇰🇷</span><span>외교부: 보케오주 골든트라이앵글 경제특구 여행금지(4단계) 지정, 2027.1.31까지 연장 — 해당지역 방문·체류 금지(위반 시 여권법 처벌 대상)</span></div>
   </div>
 
   <div class="card">
-    <div class="card-head"><h2><span class="flag">🇵🇭</span>필리핀</h2><div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div></div>
+    <div class="card-head"><h2><span class="flag">🇵🇭</span>필리핀</h2><div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span><span class="badge kr">🇰🇷 외교부</span></div></div>
     <ul class="points">
       <li>6월 민다나오 규모 7.8 강진 발생(사랑가니 인근) — 94명 사망·1,300명 이상 부상, 제너럴산토스 등 피해지역 인프라 손상 지속</li>
       <li>올해 12번째 태풍 통과 등 태풍 시즌 매우 활발 — 추가 열대저기압 진입 가능성, 항공편 지연 대비 필요</li>
       <li>남중국해 갈등 및 방재예산 스캔들발 반정부 정서 지속</li>
     </ul>
     <div class="health-note"><span class="hicon">🦠</span><span>CDC: 콜레라 활성전파지역 포함, 홍역(Measles) Level 1 여행건강경보 — 예방접종·식수 위생 확인 권장</span></div>
+    <div class="kr-note"><span class="hicon">🇰🇷</span><span>외교부: 잠보앙가 반도·술루-바실란-타위타위 군도 여행금지(4단계) 지정, 2027.1.31까지 연장 — 해당지역 방문·체류 금지(위반 시 여권법 처벌 대상)</span></div>
   </div>
 
   <div class="card">
@@ -238,7 +247,7 @@
 </div>
 
 <div class="footer">
-  본 브리핑은 Reuters · AP · BBC News, 미 국무부(travel.state.gov) 등 각국 정부 여행경보, 미 질병통제예방센터(CDC, wwwnc.cdc.gov/travel) 여행건강경보를 기본 소스로, Naver News를 보조 참고하여 매일 오전 7시(KST) 자동 생성됩니다. 전쟁·분쟁·시위·범죄 등 출장에 직접 영향을 미치는 요소를 우선하며, 전염병 이슈가 있는 국가는 🦠 보건 배지와 함께 CDC 발표 내용을 표기합니다. 중요 이슈가 없는 국가는 '이슈없음'으로 표기합니다.
+  본 브리핑은 Reuters · AP · BBC News, 미 국무부(travel.state.gov) 등 각국 정부 여행경보, 미 질병통제예방센터(CDC, wwwnc.cdc.gov/travel) 여행건강경보, 대한민국 외교부 해외안전여행(0404.go.kr)을 기본 소스로, Naver News를 보조 참고하여 매일 오전 7시(KST) 자동 생성됩니다. 전쟁·분쟁·시위·범죄 등 출장에 직접 영향을 미치는 요소를 우선하며, 전염병 이슈가 있는 국가는 🦠 보건 배지와 함께 CDC 발표 내용을, 외교부가 여행금지 등을 지정한 사업국가는 🇰🇷 외교부 배지와 함께 해당 내용을 표기합니다. 중요 이슈가 없는 국가는 '이슈없음'으로 표기합니다.
 </div>
 
 </body>
