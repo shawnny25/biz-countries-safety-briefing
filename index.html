@@ -5,250 +5,254 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>사업국가 출장 안전 · 정세 브리핑</title>
 <style>
-  :root {
-    --bg: #0f1420;
-    --card-bg: #1a2130;
-    --card-border: #2a3346;
-    --accent: #4f8bff;
-    --text-main: #e8ecf5;
-    --text-sub: #9aa5b8;
-    --tag-none: #2e7d4f;
-    --tag-issue: #c9622a;
-    --lv1: #2e7d4f;
-    --lv2: #b8952e;
-    --lv3: #c9622a;
-    --lv4: #b93b3b;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text-main);
-    padding: 32px 24px 60px;
-  }
-  .header { max-width: 1200px; margin: 0 auto 28px; }
-  .header h1 { font-size: 24px; margin: 0 0 6px; font-weight: 700; }
-  .header .date { color: var(--text-sub); font-size: 14px; }
-  .header .sources { color: var(--text-sub); font-size: 12px; margin-top: 8px; }
-  .legend { max-width: 1200px; margin: 14px auto 0; display: flex; gap: 14px; flex-wrap: wrap; font-size: 11.5px; color: var(--text-sub); }
-  .legend span.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
-  .region-title {
-    max-width: 1200px; margin: 32px auto 12px; font-size: 14px; font-weight: 700;
-    color: var(--accent); letter-spacing: 0.5px; text-transform: uppercase;
-  }
-  .grid {
-    max-width: 1200px; margin: 0 auto; display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;
-  }
-  .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; }
-  .card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; gap: 8px; }
-  .card-head h2 { font-size: 16px; margin: 0; display: flex; align-items: center; gap: 8px; }
-  .flag { font-size: 20px; }
-  .badges { display: flex; gap: 6px; flex-shrink: 0; }
-  .badge { font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 600; white-space: nowrap; }
-  .badge.issue { background: #c9622a33; color: #f0a060; }
-  .badge.none { background: #2e7d4f33; color: #6fd19a; }
-  .badge.lv1 { background: #2e7d4f33; color: #6fd19a; }
-  .badge.lv2 { background: #b8952e33; color: #e0c169; }
-  .badge.lv3 { background: #c9622a33; color: #f0a060; }
-  .badge.lv4 { background: #b93b3b33; color: #f2938e; }
-  .badge.health { background: #4f8bff33; color: #8fb8ff; }
-  .badge.kr { background: #c9364c33; color: #f28fa0; }
-  ul.points { margin: 8px 0 0; padding-left: 18px; font-size: 13.5px; line-height: 1.55; color: var(--text-main); }
-  ul.points li { margin-bottom: 6px; }
-  ul.points li:last-child { margin-bottom: 0; }
-  .health-note {
-    margin-top: 10px; padding-top: 9px; border-top: 1px dashed var(--card-border);
-    font-size: 12.5px; line-height: 1.5; color: #bcd6ff; display: flex; gap: 6px;
-  }
-  .health-note .hicon { flex-shrink: 0; }
-  .kr-note {
-    margin-top: 10px; padding-top: 9px; border-top: 1px dashed var(--card-border);
-    font-size: 12.5px; line-height: 1.5; color: #f2b6c0; display: flex; gap: 6px;
-  }
-  .kr-note .hicon { flex-shrink: 0; }
-  .footer {
-    max-width: 1200px; margin: 40px auto 0; color: var(--text-sub); font-size: 12px;
-    border-top: 1px solid var(--card-border); padding-top: 16px;
-  }
+:root{
+--bg:#0f1115; --card:#181b22; --card-border:#262b35; --text:#e8eaed; --muted:#9aa2af;
+--lv1:#2ecc71; --lv2:#f4c542; --lv3:#ff8c42; --lv4:#ff5555;
+--issue:#ff5555; --none:#3a4a3a; --none-text:#8fd19e; --health:#8e6bff;
+}
+*{box-sizing:border-box;}
+body{
+margin:0; padding:32px 20px 60px; background:var(--bg); color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic",Roboto,sans-serif;
+}
+.wrap{max-width:1180px; margin:0 auto;}
+header{text-align:center; margin-bottom:28px;}
+header h1{font-size:26px; margin:0 0 8px;}
+header .date{color:var(--muted); font-size:14px; margin-bottom:4px;}
+header .source{color:var(--muted); font-size:12px;}
+.legend{
+display:flex; justify-content:center; gap:10px; flex-wrap:wrap;
+margin:20px 0 32px; font-size:12px; color:var(--muted);
+}
+.legend span{
+display:inline-flex; align-items:center; gap:6px; padding:5px 10px;
+border:1px solid var(--card-border); border-radius:20px; background:var(--card);
+}
+.dot{width:8px; height:8px; border-radius:50%;}
+.dot.lv1{background:var(--lv1);} .dot.lv2{background:var(--lv2);}
+.dot.lv3{background:var(--lv3);} .dot.lv4{background:var(--lv4);}
+.region{margin-bottom:36px;}
+.region h2{
+font-size:15px; color:var(--muted); border-bottom:1px solid var(--card-border);
+padding-bottom:8px; margin-bottom:16px; letter-spacing:2px; text-transform:uppercase;
+}
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px;}
+.card{
+background:var(--card); border:1px solid var(--card-border); border-radius:12px;
+padding:18px 18px 16px;
+}
+.card h3{margin:0 0 10px; font-size:17px; display:flex; align-items:center; gap:8px;}
+.badges{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px;}
+.badge{
+font-size:11px; font-weight:600; padding:3px 9px; border-radius:20px;
+border:1px solid transparent;
+}
+.badge.lv1{background:rgba(46,204,113,.15); color:var(--lv1); border-color:rgba(46,204,113,.4);}
+.badge.lv2{background:rgba(244,197,66,.15); color:var(--lv2); border-color:rgba(244,197,66,.4);}
+.badge.lv3{background:rgba(255,140,66,.15); color:var(--lv3); border-color:rgba(255,140,66,.4);}
+.badge.lv4{background:rgba(255,85,85,.15); color:var(--lv4); border-color:rgba(255,85,85,.4);}
+.badge.issue{background:rgba(255,85,85,.12); color:#ff8f8f; border-color:rgba(255,85,85,.3);}
+.badge.none{background:rgba(58,74,58,.5); color:var(--none-text); border-color:rgba(143,209,158,.25);}
+.badge.health{background:rgba(142,107,255,.15); color:#b6a3ff; border-color:rgba(142,107,255,.4);}
+.card ul{margin:0; padding-left:18px; font-size:13.5px; line-height:1.55; color:#cfd3da;}
+.card ul li{margin-bottom:6px;}
+.card .none-text{font-size:13.5px; color:var(--muted); font-style:italic;}
+.health-note{
+margin-top:10px; padding:8px 10px; border-radius:8px; background:rgba(142,107,255,.08);
+border:1px solid rgba(142,107,255,.25); font-size:12.5px; color:#c9bcff; line-height:1.5;
+}
+footer{text-align:center; color:var(--muted); font-size:11px; margin-top:40px;}
 </style>
 </head>
 <body>
+<div class="wrap">
+<header>
+<h1>🛡️ 사업국가 출장 안전 · 정세 브리핑</h1>
+<div class="date">2026년 7월 10일 (금) 기준 · 매일 오전 7시 자동 갱신</div>
+<div class="source">기준 매체: Reuters · AP · BBC News, 미 국무부/각국 정부 여행경보, 미 질병통제예방센터(CDC) 여행건강경보 (참고: Naver News)</div>
+</header>
 
-<div class="header">
-  <h1>🛡️ 사업국가 출장 안전 · 정세 브리핑</h1>
-  <div class="date">2026년 7월 10일 (금) 기준 · 매일 오전 7시 자동 갱신</div>
-  <div class="sources">기준 매체: Reuters · AP · BBC News, 미 국무부/각국 정부 여행경보, 미 질병통제예방센터(CDC) 여행건강경보, 대한민국 외교부 해외안전여행(0404.go.kr) (참고: Naver News)</div>
-  <div class="legend">
-    <span><span class="dot" style="background:#6fd19a"></span>Lv.1 평시 주의</span>
-    <span><span class="dot" style="background:#e0c169"></span>Lv.2 주의 강화</span>
-    <span><span class="dot" style="background:#f0a060"></span>Lv.3 여행 재고</span>
-    <span><span class="dot" style="background:#f2938e"></span>Lv.4 여행 금지</span>
-    <span><span class="dot" style="background:#f28fa0"></span>🇰🇷 외교부 지정(여행경보 4단계 등)</span>
-  </div>
+<div class="legend">
+<span><span class="dot lv1"></span>Lv.1 평시 주의</span>
+<span><span class="dot lv2"></span>Lv.2 주의 강화</span>
+<span><span class="dot lv3"></span>Lv.3 여행 재고</span>
+<span><span class="dot lv4"></span>Lv.4 여행 금지</span>
 </div>
 
-<div class="region-title">아프리카</div>
+<div class="region">
+<h2>아프리카</h2>
 <div class="grid">
 
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇿🇲</span>잠비아</h2><div class="badges"><span class="badge lv1">Lv.1</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div></div>
-    <ul class="points">
-      <li>8/13 총선을 앞두고 자발적 시위·소요 가능성 지속 — 정치집회·대규모 군중 회피 권고</li>
-      <li>남아공 체류·이동 잠비아 국민 대상 보안 권고 발령(6/24) — 인접국 정세 불안 여파 주시</li>
-      <li>전반적으로 Lv.1 유지, 소매치기 등 경범죄 외 큰 위험 없음</li>
-    </ul>
-    <div class="health-note"><span class="hicon">🦠</span><span>CDC: 중동부아프리카 클레이드1 엠폭스(Mpox) Level 2 여행건강경보 대상국 — 밀접접촉 주의</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇰🇪</span>케냐</h2><div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div></div>
-    <ul class="points">
-      <li>7/7 '사바사바' 시위로 나이로비 등 전국 대규모 검문·체포, CBD 상당수 상점 휴업</li>
-      <li>만데라·와지르·가리사·라무 등 북부는 테러·납치 위험으로 여행금지구역 — 출장지에서 제외 필수</li>
-      <li>정치집회 예정일마다 유사한 도심 통제·교통마비 반복될 가능성</li>
-    </ul>
-    <div class="health-note"><span class="hicon">🦠</span><span>CDC: 엠폭스(Mpox) Level 2 여행건강경보 대상국, 인접 DRC 에볼라 상황 연계 주시 필요</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇪🇹</span>에티오피아</h2><div class="badges"><span class="badge lv3">Lv.3</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div></div>
-    <ul class="points">
-      <li>암하라 지역 FANO-정부군 충돌 격화(3월 대비 월평균 공격 50%↑), 곤다르·바히르다르 등 12개 존 다수 지역서 교전 지속</li>
-      <li>AFPO(파노 일부 세력)-암하라 주정부 평화협정 체결(AU/IGAD 중재)했으나 파노 분열로 전면 진정은 불투명</li>
-      <li>외국인 대상 자의적 출국금지(exit ban)·통신 두절 사례 지속 — 항공권 여유 확보 권장</li>
-    </ul>
-    <div class="health-note"><span class="hicon">🦠</span><span>CDC 기준 전국 다수 주에서 말라리아 환자 증가세 보고 — 예방약·모기 기피제 등 대비 권장</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇺🇬</span>우간다</h2><div class="badges"><span class="badge lv4">Lv.4</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div></div>
-    <ul class="points">
-      <li>서부 캬예괘와 지구서 마버그바이러스 확진 사례(6/30 WHO 통보, 영아 사망) — 美대사관 레벨4 보건경보 발령, 추가 확진은 없음</li>
-      <li>우간다 정부는 입국제한(21일 격리 등) 완화를 각국에 요청 중이나 미국 등은 강화 조치 유지</li>
-      <li>캄팔라 등 외국인 대상 강력범죄 지속, DRC 접경 에볼라 관련 국경 통제도 병행</li>
-    </ul>
-    <div class="health-note"><span class="hicon">🦠</span><span>CDC: 에볼라(분디부교) Level 2 여행건강경보 + 캬예괘와 지구 마버그 확진 — 환자·박쥐·영장류 접촉 회피</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇲🇼</span>말라위</h2><div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span></div></div>
-    <ul class="points">
-      <li>7/1 수도 릴롱궤 정부청사(Capital Hill)서 무장경찰 수색작전 실시 — 당국은 "일상 점검"이라 해명했으나 긴장 신호로 해석</li>
-      <li>독립기념일(7/6) 보안작전 중 좀바 등지서 27명 체포</li>
-      <li>인신매매·마약밀수 등 조직범죄 증가 추세 — 국경 감시 취약</li>
-    </ul>
-  </div>
-
+<div class="card">
+<h3>🇿🇲 잠비아</h3>
+<div class="badges"><span class="badge lv1">Lv.1</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div>
+<ul>
+<li>8/13 대선을 5주 앞두고 정치집회 확대 — 경찰 강경 대응 시 도심 시위 급격히 격화될 수 있음</li>
+<li>앙골라·콩고민주공화국·모잠비크 접경 20km 이내 지뢰·범죄 위험 — 해당 국경지대 출장 시 주의</li>
+<li>남부아프리카 내 비교적 안전한 편(Lv.1), 선거 전후 일정만 유의</li>
+</ul>
+<div class="health-note">🦠 CDC: 중동부아프리카 클레이드1 엠폭스(Mpox) Level 2 여행건강경보 대상국 — 밀접접촉 주의</div>
 </div>
 
-<div class="region-title">아시아</div>
+<div class="card">
+<h3>🇰🇪 케냐</h3>
+<div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div>
+<ul>
+<li>7/7 사바사바(Saba Saba) 시위로 나이로비 주요 간선도로(티카로드·모잠비크로드 등) 전면 마비 — 여진 성격의 추가 시위 가능성 잔존</li>
+<li>만데라·와지르·가리사·라무·킬리피 등 북부 및 소말리아 접경은 테러·납치 위험으로 여행금지구역</li>
+<li>나이로비 이스틀레이·키베라 지역은 범죄·납치 위험으로 회피 권고, 그 외 비즈니스 거점은 대체로 정상 운영</li>
+</ul>
+<div class="health-note">🦠 CDC: 엠폭스(Mpox) Level 2 여행건강경보 대상국, 인접 DRC 에볼라 상황 연계 주시 필요</div>
+</div>
+
+<div class="card">
+<h3>🇪🇹 에티오피아</h3>
+<div class="badges"><span class="badge lv3">Lv.3</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div>
+<ul>
+<li>티그라이·암하라는 '여행금지'(Lv.4) — 암하라는 FANO 민병대-정부군 무력충돌 지속, 곤다르·바히르다르·랄리벨라 등서 총격·포격 사례</li>
+<li>외국인 대상 자의적 출국금지(exit ban) 사례 존재 — 통신·전력 두절 흔함, 항공권 여유 확보 권장</li>
+<li>에리트레아·남수단 접경 10km, 수단 접경 20km 이내 전면 이동 자제 — 그 외 지역은 전국 '여행 재고'(Lv.3) 수준</li>
+</ul>
+<div class="health-note">🦠 CDC 기준 전국 다수 주에서 말라리아 환자 증가세, 소아마비(폴리오) 순환 바이러스 검출국 목록 포함 — 예방약·백신 상태 확인 권장</div>
+</div>
+
+<div class="card">
+<h3>🇺🇬 우간다</h3>
+<div class="badges"><span class="badge lv4">Lv.4</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div>
+<ul>
+<li>미 국무부 여행경보 최고단계 '여행금지'(Lv.4) — 범죄·테러·소요 복합 리스크</li>
+<li>서부 캬예괘와(Kyegegwa) 지구서 마버그바이러스(Marburg) 확진 발생(2026.7) — 환자·동물 접촉 회피 필요</li>
+<li>에볼라(분디부교) 누적 20건 확진(상당수 콩고 왕래자) — 콩고민주공화국 접경 일부 폐쇄, 입국 시 21일 자가격리 요구될 수 있음</li>
+</ul>
+<div class="health-note">🦠 CDC: 에볼라(분디부교 바이러스) Level 2 여행건강경보 + 서부 캬예괘와 지구 마버그 확진 사례 — 환자·박쥐·영장류 접촉 주의</div>
+</div>
+
+<div class="card">
+<h3>🇲🇼 말라위</h3>
+<div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span></div>
+<ul>
+<li>릴롱궤·블랜타이어 등 주요도시서 차량납치·강도 발생 — 검문소 대기 중 표적되는 사례 다수, 야간 이동 각별 주의</li>
+<li>경비 미흡 빈집·호텔·롯지 대상 강도 사건 다수, 외국인 대상 납치 사례도 존재</li>
+<li>단독 저항 시 흉기 사용 사례 있어 강도 조우 시 저항 자제 권고</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="region">
+<h2>아시아</h2>
 <div class="grid">
 
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇻🇳</span>베트남</h2><div class="badges"><span class="badge lv1">Lv.1</span><span class="badge none">이슈없음</span><span class="badge health">🦠 보건</span></div></div>
-    <ul class="points">
-      <li>여행경보 Lv.1 유지 — 폭력범죄·테러 위협 없음</li>
-      <li>7/1부터 입국 시 건강신고서(예방접종 증빙 포함 가능) 제출 요구 신설 — 출장 전 서류 확인 필요</li>
-      <li>중동 정세 악화(7/9~)로 항공편 우회·지연 등 간접 영향 가능성, 베트남 자체 리스크는 낮음</li>
-    </ul>
-    <div class="health-note"><span class="hicon">🦠</span><span>CDC: 뎅기열(Dengue) Level 1 여행건강경보 대상국 — 모기 매개 감염 예방 조치 권장</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇮🇳</span>인도</h2><div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div></div>
-    <ul class="points">
-      <li>마니푸르 우크룰 지구서 7/6 아삼소총부대 호송대 매복공격으로 장병 2명 사망 — 나가군 내부반란 여파로 정세 재점화</li>
-      <li>잠무카슈미르 ISI 배후 첩보조직 적발(11명 검거) 등 대테러 작전 지속, 예방적 통제 유지</li>
-      <li>델리·뭄바이·벵갈루루 등 주요 비즈니스 거점은 정상 운영</li>
-    </ul>
-    <div class="health-note"><span class="hicon">🦠</span><span>CDC 기준 뎅기열 급증 및 콜레라 활성전파지역 포함 — 식수·모기 매개 감염 예방 필요</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇱🇦</span>라오스</h2><div class="badges"><span class="badge lv1">Lv.1</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span><span class="badge kr">🇰🇷 외교부</span></div></div>
-    <ul class="points">
-      <li>사이솜분주는 산발적 기반시설 공격·무장충돌로 비필수 여행 자제구역 유지</li>
-      <li>태국 접경 보케오주 검문소 군 병력 증강 — 라오군-미상 무장단체 충돌 지속</li>
-      <li>캄보디아-태국 국경 분쟁 여파로 참파삭주 남서부 국경 인근도 군사충돌·지뢰 위험</li>
-    </ul>
-    <div class="health-note"><span class="hicon">🦠</span><span>CDC: 소아마비(폴리오) 바이러스 검출국 목록 포함 — 예방접종 상태 사전 확인 권장</span></div>
-    <div class="kr-note"><span class="hicon">🇰🇷</span><span>외교부: 보케오주 골든트라이앵글 경제특구 여행금지(4단계) 지정, 2027.1.31까지 연장 — 해당지역 방문·체류 금지(위반 시 여권법 처벌 대상)</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇵🇭</span>필리핀</h2><div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span><span class="badge kr">🇰🇷 외교부</span></div></div>
-    <ul class="points">
-      <li>6월 민다나오 규모 7.8 강진 발생(사랑가니 인근) — 94명 사망·1,300명 이상 부상, 제너럴산토스 등 피해지역 인프라 손상 지속</li>
-      <li>올해 12번째 태풍 통과 등 태풍 시즌 매우 활발 — 추가 열대저기압 진입 가능성, 항공편 지연 대비 필요</li>
-      <li>남중국해 갈등 및 방재예산 스캔들발 반정부 정서 지속</li>
-    </ul>
-    <div class="health-note"><span class="hicon">🦠</span><span>CDC: 콜레라 활성전파지역 포함, 홍역(Measles) Level 1 여행건강경보 — 예방접종·식수 위생 확인 권장</span></div>
-    <div class="kr-note"><span class="hicon">🇰🇷</span><span>외교부: 잠보앙가 반도·술루-바실란-타위타위 군도 여행금지(4단계) 지정, 2027.1.31까지 연장 — 해당지역 방문·체류 금지(위반 시 여권법 처벌 대상)</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇧🇩</span>방글라데시</h2><div class="badges"><span class="badge lv3">Lv.3</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div></div>
-    <ul class="points">
-      <li>2월 총선·헌법 국민투표를 앞두고 정치폭력 우려 지속 — 아와미리그 금지 이후 지지세력·당국 간 산발적 충돌 패턴 반복 경계</li>
-      <li>치타공힐트랙츠(카그라차리·랑가마티·반다르반)는 여행금지구역 유지</li>
-      <li>최근 1년간 폭도 폭력(mob violence) 1,050건 이상 기록 — 종교·젠더 이슈 연계 폭력 증가 추세</li>
-    </ul>
-    <div class="health-note"><span class="hicon">🦠</span><span>CDC: 뎅기열·콜레라 활성전파지역 포함 — 모기 매개 감염 및 식수·위생 관련 예방조치 필요</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇰🇬</span>키르기스스탄</h2><div class="badges"><span class="badge lv1">Lv.1</span><span class="badge issue">이슈</span></div></div>
-    <ul class="points">
-      <li>7/5 바트켄 지역 국경초소(카담자이·체치메)서 반부패 단속 중 총격 발생 — 단속 대상 군인이 발포, 돌발 충돌</li>
-      <li>우즈벡 접경은 개선됐으나 타지크 접경(바트켄·페르가나 계곡)은 여전히 충돌·지뢰 위험으로 이동 자제 권고</li>
-      <li>비슈케크 등 주요 도시는 안정적</li>
-    </ul>
-  </div>
-
+<div class="card">
+<h3>🇻🇳 베트남</h3>
+<div class="badges"><span class="badge lv1">Lv.1</span><span class="badge none">이슈없음</span><span class="badge health">🦠 보건</span></div>
+<p class="none-text">특별한 안전 이슈 없음 — 무력분쟁·테러 위협 없고 비허가 집회는 엄격 처벌되어 대규모 시위 사실상 부재. 소매치기 등 경범죄만 유의.</p>
+<div class="health-note">🦠 CDC: 뎅기열(Dengue) Level 1 여행건강경보 대상국 — 모기 매개 감염 예방 조치 권장</div>
 </div>
 
-<div class="region-title">중남미 · 카리브</div>
+<div class="card">
+<h3>🇮🇳 인도</h3>
+<div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div>
+<ul>
+<li>잠무카슈미르(라다크·레 제외)는 전면 여행자제구역, 파키스탄 접경 LoC 간헐적 총격·포격 지속</li>
+<li>마니푸르는 인종분쟁으로 사실상 '여행금지' 수준 — 통행금지·인터넷 차단 가능, 출장지에서 제외 권장</li>
+<li>델리·뭄바이·벵갈루루 등 주요 비즈니스 거점은 정상 운영, 시위 발생 시 교통정체만 유의</li>
+</ul>
+<div class="health-note">🦠 CDC 기준 뎅기열 급증 및 콜레라 활성전파지역 포함 — 식수·모기 매개 감염 예방 필요</div>
+</div>
+
+<div class="card">
+<h3>🇱🇦 라오스</h3>
+<div class="badges"><span class="badge lv1">Lv.1</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div>
+<ul>
+<li>사이솜분(Xaisomboun)주는 반정부 무장세력과의 산발적 충돌·기반시설 공격으로 여행자제구역</li>
+<li>보케오(Bokeo)주는 강력범죄 심각으로 여행 자제 권고, 미얀마 접경 지역은 마약밀매·무장조직 활동 상존</li>
+<li>농촌지역 다수에 불발탄(UXO) 잔존 — 정해진 도로·경로 밖 이동 금지</li>
+</ul>
+<div class="health-note">🦠 CDC: 소아마비(폴리오) 순환 바이러스 검출국 목록 포함 — 예방접종 상태 사전 확인 권장</div>
+</div>
+
+<div class="card">
+<h3>🇵🇭 필리핀</h3>
+<div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div>
+<ul>
+<li>서·중부 민다나오 및 술루군도는 테러조직(IS 연계 포함) 활동으로 전면 여행자제구역 — 해당 지역 출장 회피</li>
+<li>6/8 민다나오 규모 7.8 지진 이후 여진 지속, 일부 지역 건물·기반시설 손상 — 현지 이동 전 안전 확인 필요</li>
+<li>7~11월 태풍 성수기 진행 중 — 항공편 지연·결항 대비, PAGASA 발표 모니터링 권장</li>
+</ul>
+<div class="health-note">🦠 CDC: 콜레라 활성전파지역 포함, 홍역(Measles) Level 1 여행건강경보 — 예방접종·식수 위생 확인 권장</div>
+</div>
+
+<div class="card">
+<h3>🇧🇩 방글라데시</h3>
+<div class="badges"><span class="badge lv3">Lv.3</span><span class="badge issue">이슈</span><span class="badge health">🦠 보건</span></div>
+<ul>
+<li>2024년 유혈사태 이후 대규모 충돌은 진정됐으나 정치·경제 이슈발 시위가 예고 없이 재발 가능</li>
+<li>치타공힐트랙츠(카그라차리·랑가마티·반다르반)는 소요·범죄·테러·납치 위험으로 여행금지구역</li>
+<li>다카 외 지역은 긴급 대응 인프라 취약 — 상황 급변 대비 현지 언론 모니터링 필요</li>
+</ul>
+<div class="health-note">🦠 CDC: 뎅기열·콜레라 활성전파지역 포함 — 모기 매개 감염 및 식수·위생 관련 예방조치 필요</div>
+</div>
+
+<div class="card">
+<h3>🇰🇬 키르기스스탄</h3>
+<div class="badges"><span class="badge lv1">Lv.1</span><span class="badge issue">이슈</span></div>
+<ul>
+<li>중앙아시아 내 비교적 안전한 편(Lv.1)이나 최근 '소요' 위험지표 추가됨</li>
+<li>타지키스탄 접경(바트켄주) 30km 이내 주의 강화 — 2/8 라일략(Lyailyak) 검문소 폐쇄 등 국경 접근 예고 없이 변동 가능</li>
+<li>비슈케크·이식쿨호 등 주요 거점은 2023~2026.3 무장사건 기록 없어 안전한 편</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="region">
+<h2>중남미·카리브</h2>
 <div class="grid">
 
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇵🇪</span>페루</h2><div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span></div></div>
-    <ul class="points">
-      <li>리마·카야오 치안 비상사태 지속(군 배치), 7/2 엘니뇨 대비 22개주 796개 구역 60일 기상 비상사태 추가 선포 — 폭우로 이동 차질 가능성</li>
-      <li>리마 구시가지 등서 정치 시위·파업 상시 발생 — 도로·철도 돌발 통제 가능</li>
-      <li>VRAEM 등 마약범죄 여행금지구역 유지</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇩🇴</span>도미니카공화국</h2><div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span></div></div>
-    <ul class="points">
-      <li>2026년 살인율 카리브해 최저 수준 지속(4년 연속 감소), 1~2월 강도 발생 34.7%↓ 등 치안 개선 추세</li>
-      <li>다만 오토바이 이용 노상강도(drive-by robbery)는 여전히 흔함 — 도심 이동 시 주의</li>
-      <li>아이티 접경 지역은 긴장 상존</li>
-    </ul>
-  </div>
-
+<div class="card">
+<h3>🇵🇪 페루</h3>
+<div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span></div>
+<ul>
+<li>리마·카야오 등 강력범죄 급증 대응 국가비상사태 시행 중 — 군 병력 거리 배치</li>
+<li>리마 구시가지 등서 정치 시위 상시 발생, 7월 독립기념일 전후 집회 증가 — 도로·철도 돌발 통제 가능</li>
+<li>미라플로레스·바랑코·산이시드로 등 주요 비즈니스 거점은 정상 운영, 야간 시내 이동은 최소화 권장</li>
+</ul>
 </div>
 
-<div class="region-title">중동</div>
+<div class="card">
+<h3>🇩🇴 도미니카공화국</h3>
+<div class="badges"><span class="badge lv2">Lv.2</span><span class="badge issue">이슈</span></div>
+<ul>
+<li>전국적으로 무장강도·살인 등 강력범죄 위협 상존 — 도심 이동 시 주의</li>
+<li>아이티 접경(다하본 등)은 치안 예측불가·갱단·밀수 위험으로 10km 이내 접근 자제, 육·해상 국경 폐쇄 중</li>
+<li>이민단속 과정서 미국 시민이 아이티 이주민으로 오인되어 일시 구금된 사례 존재 — 신분증 상시 소지 권장(푼타카나 등 리조트 거점은 대체로 안전)</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="region">
+<h2>중동</h2>
 <div class="grid">
 
-  <div class="card">
-    <div class="card-head"><h2><span class="flag">🇯🇴</span>요르단</h2><div class="badges"><span class="badge lv3">Lv.3</span><span class="badge issue">이슈</span></div></div>
-    <ul class="points">
-      <li>7/9 美대사관 보안경보 — 요르단 영공 내 미사일·드론·로켓 위협으로 즉시 대피·엄폐 권고, 정세 급변 가능</li>
-      <li>이스라엘-이란 6/7~8 미사일 공방 재개 등 정전 불안정 지속 — 항공편 결항·우회 빈발</li>
-      <li>3/2 이후 미국 비필수 공관인력 철수 조치 유지 중</li>
-    </ul>
-  </div>
-
+<div class="card">
+<h3>🇯🇴 요르단</h3>
+<div class="badges"><span class="badge lv3">Lv.3</span><span class="badge issue">이슈</span></div>
+<ul>
+<li>이스라엘-이란 6/7~8 미사일·드론 재교전 이후 휴전 유지 중이나 불안정 — 미 국무부 Lv.3 '여행재고', 비필수 공관 인력 철수 유지</li>
+<li>시리아 접경 3km, 이라크 접경 5km(움 카이스 제외) 이내 여행금지구역</li>
+<li>이스라엘발 국경통과지점(요르단강·킹후세인교·와디아라바)은 예고 없이 폐쇄될 수 있어 대체 일정 필요</li>
+</ul>
 </div>
 
-<div class="footer">
-  본 브리핑은 Reuters · AP · BBC News, 미 국무부(travel.state.gov) 등 각국 정부 여행경보, 미 질병통제예방센터(CDC, wwwnc.cdc.gov/travel) 여행건강경보, 대한민국 외교부 해외안전여행(0404.go.kr)을 기본 소스로, Naver News를 보조 참고하여 매일 오전 7시(KST) 자동 생성됩니다. 전쟁·분쟁·시위·범죄 등 출장에 직접 영향을 미치는 요소를 우선하며, 전염병 이슈가 있는 국가는 🦠 보건 배지와 함께 CDC 발표 내용을, 외교부가 여행금지 등을 지정한 사업국가는 🇰🇷 외교부 배지와 함께 해당 내용을 표기합니다. 중요 이슈가 없는 국가는 '이슈없음'으로 표기합니다.
+</div>
 </div>
 
+<footer>본 브리핑은 공개 매체 및 각국 정부 발표를 기반으로 자동 생성되며, 최종 출장 결정은 사내 안전관리 절차에 따라 판단하시기 바랍니다.</footer>
+</div>
 </body>
 </html>
