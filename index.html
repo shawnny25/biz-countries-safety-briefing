@@ -37,9 +37,17 @@
     font-size: 22px; font-weight: 700; margin: 40px 0 16px;
     border-bottom: 1px solid #27272a; padding-bottom: 10px;
   }
+  .region-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+  }
   .card {
     background: #18181b; border: 1px solid #27272a; border-radius: 14px;
-    padding: 22px; margin-bottom: 18px;
+    padding: 22px;
+  }
+  @media (max-width: 680px) {
+    .region-grid { grid-template-columns: 1fr; }
   }
   .card h3 { margin: 0 0 10px; font-size: 19px; }
   .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
@@ -85,6 +93,7 @@
   </div>
 
   <div class="region-title">아프리카</div>
+  <div class="region-grid">
 
   <div class="card">
     <h3>🇿🇲 잠비아</h3>
@@ -162,7 +171,10 @@
     </ul>
   </div>
 
+  </div>
+
   <div class="region-title">아시아</div>
+  <div class="region-grid">
 
   <div class="card">
     <h3>🇻🇳 베트남</h3>
@@ -253,7 +265,10 @@
     </ul>
   </div>
 
+  </div>
+
   <div class="region-title">중남미·카리브</div>
+  <div class="region-grid">
 
   <div class="card">
     <h3>🇵🇪 페루</h3>
@@ -281,7 +296,10 @@
     </ul>
   </div>
 
+  </div>
+
   <div class="region-title">중동</div>
+  <div class="region-grid">
 
   <div class="card">
     <h3>🇯🇴 요르단</h3>
@@ -296,6 +314,7 @@
       <li>시리아·이라크 접경 여행금지구역 유지, 국경통과지점(요르단강·킹후세인교·와디아라바) 예고 없는 폐쇄 가능성 높음</li>
     </ul>
     <div class="alert-note">⚠ 7월 대비 상황 급격히 불안정해짐 — 출장 자체를 전면 재검토할 것을 권장</div>
+  </div>
   </div>
 
   <footer>
