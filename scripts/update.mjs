@@ -2,7 +2,7 @@
 // 실패하면 기존 index.html을 그대로 두고 정상 종료한다(실패 알림 메일이 가지 않도록).
 import fs from "node:fs";
 
-const MODEL = "gemini-2.5-flash"; // 무료 한도가 바뀌면 여기만 교체
+const MODEL = "gemini-3.8-flash"; // 무료 한도가 바뀌면 여기만 교체
 
 // level은 외교부/미 국무부 공식 등급을 보고 직접 수정 (AI에게 맡기지 않음)
 const COUNTRIES = [
